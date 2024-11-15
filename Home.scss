@@ -1,0 +1,227 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .right_side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background: linear-gradient(125deg, rgba(255, 140, 0, 0.8), rgba(255, 200, 0, 0.8));
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+  }
+  
+  .left_side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background: black;
+    height: 100%;
+    color: white;
+    position: relative;
+    z-index: 0;
+    padding: 20px;
+  }
+  
+  .profile_image {
+    width: auto;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    opacity: 0;
+    animation: fadeIn 2s forwards, moveForward 2s 2s forwards, moveBackward 2s 4s forwards, zoomIn 2s 6s forwards, zoomOut 2s 8s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes moveForward {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100px);
+    }
+  }
+  
+  @keyframes moveBackward {
+    from {
+      transform: translateX(100px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes zoomOut {
+    from {
+      transform: scale(1.2);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  .left_side h2, .left_side h3, .left_side p {
+    opacity: 0;
+    animation: textFadeIn 2s forwards;
+  }
+  
+  .left_side h2 {
+    animation-delay: 0.5s;
+  }
+  
+  .left_side h3 {
+    animation-delay: 1s;
+  }
+  
+  .left_side p {
+    animation-delay: 1.5s;
+  }
+  
+  @keyframes textFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .left_side h2 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .left_side h3 {
+    color: #ADD8E6;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .left_side p {
+    color: #D3D3D3;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .image_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .get_img {
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s ease;
+  }
+  
+  .get_img:hover {
+    transform: scale(1.2);
+  }
+  
+  .contact_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .image_container:hover .contact_links {
+    opacity: 1;
+  }
+  
+  .contact_link {
+    display: inline-block;
+  }
+  
+  .contact_icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact_link:hover .contact_icon {
+    transform: scale(1.2);
+  }
+  
+  .next_page_link {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    transition: transform 0.3s ease;
+  }
+  
+  .next_page_icon {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .next_page_link:hover {
+    transform: scale(1.2);
+  }
+  .next_page_loader {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    transition: transform 0.3s ease;
+    animation: rotate 2s linear infinite;
+    color: white; /* Ensure the icon is visible against the background */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
